@@ -6,10 +6,10 @@ service mysqlchk
 {
         flags           = REUSE
         socket_type     = stream
-        port            = <%= mysqlchk_port %> 
+        port            = <%= @mysqlchk_port %> 
         wait            = no
         user            = nobody
-        server          = <%= mysqlchk_script_dir %>/galera_chk
+        server          = <%= @mysqlchk_script_dir %>/galera_chk
         log_on_failure  += USERID
         disable         = no
         only_from       = 0.0.0.0/0
